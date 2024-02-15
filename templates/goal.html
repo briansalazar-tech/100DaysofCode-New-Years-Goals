@@ -1,0 +1,14 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% include "header.html" %}
+
+    <section id="add">
+        <div class="container">
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-success btn-lg" type="button"><a href="{{ url_for('home') }}">Back to Goals ⬅️</a></button>
+              </div>
+            <hr>
+            {{ render_form(goal_form, novalidate=True, button_map={"submit": "success", "delete": "danger"} )}}
+        </div>
+    </section>
+    
+    {% include "footer.html" %}

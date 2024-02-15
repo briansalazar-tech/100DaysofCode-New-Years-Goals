@@ -1,0 +1,5 @@
+Notes for future revisions
+---------------------------
+1. Add error checking to check if goal already exists and warn user.
+2. Add login screen and options to allow multiple users with unique goals.
+3. Revise code so that it is not over 400 lines long. Without spacing and notes could probably shave off 50+ lines.

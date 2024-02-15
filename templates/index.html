@@ -1,0 +1,139 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% include "header.html" %}
+
+    {% block content %}
+    <section id="add">
+        <div class="container">
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-success btn-lg" type="button"><a href="{{ url_for('goal') }}">Add Resolution/Goal ✅</a></button>
+              </div>
+            <hr>
+        </div>
+    </section>
+    <section id="personal">
+        <div class="container">
+            <h2 class="display-3">Personal Goals 🧘</h2>
+            <hr>
+            <!-- Personal Table from DB-->
+            <table class="table table-success table-striped table-hover">
+                {% for row in personal_goal_list[:1] %}
+                    <tr>
+                    {% for item in row %}
+                    <td>{{ item }}</td>
+                    {% endfor %}
+                    </tr>
+                {% endfor %}
+                {% for row in personal_goal_list[1:] %}
+                <tr>
+                    {% for item in row %}
+                    {% if item == row[-1] %}
+                        {% if row[3] != "✅ - Complete!" %}
+                        <td><a href="{{ url_for('personal_complete', id=personal_goal_list.index(row)) }}" id="complete_link">{{ item }}</a></td>
+                        {% else %}
+                        <td><h4> 🎉 </h4></td>
+                        {% endif %}
+                    {% else %}
+                    <td><a href="{{ url_for('personal_edit', id=personal_goal_list.index(row)) }}" style="color: black;">{{ item }}</a></td>
+                    {% endif %}
+                {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </section>
+    <section id="professional">
+        <div class="container">
+            <h2 class="display-3">Professional Goals 💼</h2>
+            <hr>
+            <!-- Professional rows from DB -->
+            <table class="table table-success table-striped table-hover">
+                {% for row in professional_goal_list[:1] %}
+                    <tr>
+                    {% for item in row %}
+                    <td>{{ item }}</td>
+                    {% endfor %}
+                    </tr>
+                {% endfor %}
+                {% for row in professional_goal_list[1:] %}
+                    <tr>
+                    {% for item in row %}
+                        {% if item == row[-1] %}
+                            {% if row[3] != "✅ - Complete!" %}
+                            <td><a href="{{ url_for('professional_complete', id=professional_goal_list.index(row)) }}" id="complete_link">{{ item }}</a></td>
+                            {% else %}
+                            <td><h4> 🎉 </h4></td>
+                            {% endif %}
+                        {% else %}
+                        <td><a href="{{ url_for('professional_edit', id=professional_goal_list.index(row)) }}" style="color: black;">{{ item }}</a></td>
+                        {% endif %}
+                    {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </section>
+    <section id="educational">
+        <div class="container">
+            <h2 class="display-3">Learning Goals 📖</h2>
+            <hr>
+            <!-- Educational rows from DB -->
+            <table class="table table-success table-striped table-hover">
+                {% for row in learning_goal_list[:1] %}
+                    <tr>
+                    {% for item in row %}
+                    <td>{{ item }}</td>
+                    {% endfor %}
+                    </tr>
+                {% endfor %}
+                {% for row in learning_goal_list[1:] %}
+                    <tr>
+                        {% for item in row %}
+                        {% if item == row[-1] %}
+                            {% if row[3] != "✅ - Complete!" %}
+                            <td><a href="{{ url_for('learning_complete', id=learning_goal_list.index(row)) }}" id="complete_link">{{ item }}</a></td>
+                            {% else %}
+                            <td><h4> 🎉 </h4></td>
+                            {% endif %}
+                        {% else %}
+                        <td><a href="{{ url_for('learning_edit', id=learning_goal_list.index(row)) }}" style="color: black;">{{ item }}</a></td>
+                        {% endif %}
+                    {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </section>
+    <section id="financal">
+        <div class="container">
+            <h2 class="display-3">Financial Goals 💸</h2>
+            <hr>
+            <!-- Financial rows from DB -->
+            <table class="table table-success table-striped table-hover">
+                {% for row in financial_goal_list[:1] %}
+                    <tr>
+                    {% for item in row %}
+                    <td>{{ item }}</td>
+                    {% endfor %}
+                    </tr>
+                {% endfor %}
+                {% for row in financial_goal_list[1:] %}
+                    <tr>
+                        {% for item in row %}
+                        {% if item == row[-1] %}
+                            {% if row[3] != "✅ - Complete!" %}
+                            <td><a href="{{ url_for('financial_complete', id=financial_goal_list.index(row)) }}" id="complete_link">{{ item }}</a></td>
+                            {% else %}
+                            <td><h4> 🎉 </h4></td>
+                            {% endif %}
+                        {% else %}
+                        <td><a href="{{ url_for('financial_edit', id=financial_goal_list.index(row)) }}" style="color: black;">{{ item }}</a></td>
+                        {% endif %}
+                    {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </section>
+
+    {% endblock %}
+    {% include "footer.html" %}
