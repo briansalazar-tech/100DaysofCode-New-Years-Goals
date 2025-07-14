@@ -1,3 +1,4 @@
+dotenv
 pandas
 Bootstrap_Flask==2.2.0
 Flask_WTF==1.2.1
