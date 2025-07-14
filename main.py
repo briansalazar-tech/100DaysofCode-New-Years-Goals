@@ -4,6 +4,9 @@ from flask import Flask, render_template, redirect, url_for, request
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
 from forms import AddGoal, EditGoal
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Global Variables
 MAIN_TITLE = "New Years Resolutions"

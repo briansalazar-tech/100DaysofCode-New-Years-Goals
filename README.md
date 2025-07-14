@@ -44,7 +44,7 @@ When a user clicks on a goal to edit it, the page goal.html template file is use
 #### “Quick Completing” Goals
 When a user clicks the “**quick complete**” option next to a goal. The goal’s status is changed to complete and the home page is reloaded.
 ## Project Screenshots
-Screenshots for this project can be found under the [screenshots folder](100DaysofCode-New-Years-Goals/screenshots). The screenshots added include pictures of the home page as well as the add/edit page. 
+Screenshots for this project can be found under the [screenshots folder](/screenshots). The screenshots added include pictures of the home page as well as the add/edit page. 
 ### Areas for Improvement
  This project hits all the checkmarks for what I wanted to achieve, but there are areas for improvement, including the following (from *revisionideas.txt*):
 1. Add error checking to check if the goal already exists and warn the user.
